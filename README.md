@@ -39,7 +39,7 @@ g++ -std=c++20 -pthread -I./boost-1.80.0 -I./boost-1.80.0/include -L./boost-1.80
 ./bin/<target_file>
 ```
 
-## Detail: Steps to communicate through the network
+## Detail: Steps to communicate through the network with Boost Asio
 ### 1. Create an IO context object (abstraction of the OS data transfer interface)
 
 As an example with Boost Asio, an io context object can be created as:
