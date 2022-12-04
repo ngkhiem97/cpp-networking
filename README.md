@@ -130,10 +130,7 @@ String from Stream buffer: Hello
 Stream buffer size: 11
 ```
 
-Data can be read from active sockets into buffers or written to active sockets from buffers. Three functions for reads and two for writing
-- Fixed-size data chunk (read and write)
-- Fixed-size data chunk starting at an offset (read and write)
-- Read until a delimiter, regular expression, or arbitrary predicate matches (read only)
+Data can be read from active sockets into buffers or written to active sockets from buffers. Three functions for reads and two for writing:
 
 **Reading Data from sockets**
 
