@@ -81,14 +81,14 @@ resolver{io_context};
 resolver.resolve("www.google.com", "http", ec);
 ```
 
-The detail implementation is at the file **./src/hostname_resol.cpp**, which output the following when the file is compiled and executed:
+The detail implementation is at the file [**./src/hostname_resol.cpp**](./src/hostname_resol.cpp), which output the following when the file is compiled and executed:
 
 ```
 http www.google.com 142.250.80.100:80
 http www.google.com [2607:f8b0:4006:80d::2004]:80
 ```
 
-It can also be implemented to run asynchronously. The asynchronous implemetation is at the file **./src/hostname_resol_async.cpp**.
+It can also be implemented to run asynchronously. The asynchronous implemetation is at the file [**./src/hostname_resol_async.cpp**](./src/hostname_resol_async.cpp).
 
 ### 3. Create a socket and connect using the socket
 
@@ -108,7 +108,7 @@ socket{io_context};
 boost::asio::connect(socket, endpoint);
 ```
 
-The detail implementation is at the file **./src/ip_connect.cpp**, which output the following when the file is compiled and executed:
+The detail implementation is at the file [**./src/ip_connect.cpp**](./src/ip_connect.cpp), which output the following when the file is compiled and executed:
 
 ```
 Connected to : 142.251.40.196:80
@@ -121,7 +121,7 @@ Any data transfer with Boost Asio is done using buffers. Types of buffer in Boos
 - Mutable Buffer (boost::asio::mutable_buffer) can be modified after construction
 - Resizable Buffer (boost::asio:streambuf) resizable automatically (based on std::streambuf)
 
-Implementations of different buffer types is at the file **./src/asio_buffers.cpp**, which output the following when the file is compiled and executed:
+Implementations of different buffer types is at the file [**./src/asio_buffers.cpp**](./src/asio_buffers.cpp), which output the following when the file is compiled and executed:
 ```
 Mutable buffer: 20
 Constant buffer: 20
@@ -147,9 +147,9 @@ Data can be read from active sockets into buffers or written to active sockets f
 | write(s, b, [cmp], [ec])             | Writes into socket s from a const buffer b according to completion condition cmp. Sets the error_code ec if an error condition is encountered, otherwise, throws a system_error |
 | write_at(s, off, b, [cmp], [ec])     | Writes into socket s, from a mutable buffer b starting from size_t offset off, according to completion condition cmp. Sets the error_code ec if an error condition is encountered; otherwise, throws a system_error |
 
-The file **./src/simple_http_client.cpp** implements a simple HTTP client example that connects to a server and requests a response, which outputs the HTTP response of www.google.com.
+The file [**./src/simple_http_client.cpp**](./src/simple_http_client.cpp) implements a simple HTTP client example that connects to a server and requests a response, which outputs the HTTP response of www.google.com.
 
-The file **./src/simple_echo_server.cpp** implements a simple echo server example that listens on a port and responds to requests with capitalized version of the request. the outputs should be as following following when the file is compiled and executed:
+The file [**./src/simple_echo_server.cpp**](./src/simple_echo_server.cpp) implements a simple echo server example that listens on a port and responds to requests with capitalized version of the request. the outputs should be as following following when the file is compiled and executed:
 
 ```bash
 % ./bin/simple_echo_server &
@@ -160,4 +160,4 @@ HELLO
 read_until: End of file [asio.misc:2]
 ```
 
-Additionally, the file **./src/simple_echo_server_threads.cpp** implements the same echo server example but with multiple threads.
+Additionally, the file [**./src/simple_echo_server_threads.cpp**](./src/simple_echo_server_threads.cpp) implements the same echo server example but with multiple threads (work-in-progress).
