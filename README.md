@@ -10,7 +10,7 @@ Steps to communicate through the network:
 - Create a socket and connect using the socket
 - Transfer data (requesting or serving)
 
-The following repository holds the programs following the steps above. The detailed implementations are discussed later.
+The following repository holds the programs following the steps above. The detailed implementations are discussed.
 
 ## Repository structure
 
