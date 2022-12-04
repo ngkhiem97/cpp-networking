@@ -29,7 +29,7 @@ gzip boost_1_80_0.tar.bz2 boost-1.80.0
 ## Compiling source files
 
 ```bash
-g++ -std=c++20 -pthread -I./boost-1.80.0 -I./boost-1.80.0/include -L./boost-1.80.0/lib -o ./bin/<target_file> ./src/<source_file> -lboost_thread
+g++ -std=c++20 -pthread -I./boost-1.80.0 -I./boost-1.80.0/include -o ./bin/<target_file> ./src/<source_file>
 ```
 
 ## Executing target file
@@ -147,4 +147,17 @@ Data can be read from active sockets into buffers or written to active sockets f
 | write(s, b, [cmp], [ec])             | Writes into socket s from a const buffer b according to completion condition cmp. Sets the error_code ec if an error condition is encountered, otherwise, throws a system_error |
 | write_at(s, off, b, [cmp], [ec])     | Writes into socket s, from a mutable buffer b starting from size_t offset off, according to completion condition cmp. Sets the error_code ec if an error condition is encountered; otherwise, throws a system_error |
 
-The file **./src/simple_http_client.cpp implements** a simple HTTP client example that connects to a server and requests a response, which outputs the HTTP response of www.google.com.
+The file **./src/simple_http_client.cpp** implements a simple HTTP client example that connects to a server and requests a response, which outputs the HTTP response of www.google.com.
+
+The file **./src/simple_echo_server.cpp** implements a simple echo server example that listens on a port and responds to requests with capitalized version of the request. the outputs should be as following following when the file is compiled and executed:
+
+```bash
+% ./bin/simple_echo_server &
+% ncat localhost 1895
+hello
+HELLO
+^C
+read_until: End of file [asio.misc:2]
+```
+
+Additionally, the file **./src/simple_echo_server_threads.cpp** implements the same echo server example but with multiple threads.
