@@ -55,7 +55,7 @@ boost::asio::io_context io_context{8};
 io_context.run();
 ```
 
-The detail implementation is at the file **./src/io_context.cpp**, which output the following when the file is compiled and executed:
+The detail implementation is at the file [**./src/io_context.cpp**](./src/io_context.cpp), which output the following when the file is compiled and executed:
 
 ```
 Entering steady_timer::wait
