@@ -129,7 +129,7 @@ Data can be read from active sockets into buffers or written to active sockets f
 
 **Reading Data from sockets**
 
-| Function  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; | Description   |
+| Function                             | Description   |
 | ------------------------------------ | ------------- |
 | read(s, b, [cmp], [ec])              | Read from socket s into a mutate buffer b according to completion condition cmp. Sets the error_code ec if an error condition is encountered, otherwise, throws a system_error |
 | read_at(s, off, b, [cmp], [ec])      | Reads from socket s, starting from size_t offset off, into a mutable buffer b according to completion condition cmp. Sets the error_code ec if an error condition is encountered; otherwise, throws a system_error |
